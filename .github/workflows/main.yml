@@ -12,7 +12,7 @@ on:
 
 jobs:
   greet:
-   if: ${{ github.repository == 'hanokchinni04-ui/Actions' }}
+   if: ${{ github.repository == 'hanokchinni004-ui/Actions' }}
    runs-on: ubuntu-latest
    steps:
       - name: Say Hello
