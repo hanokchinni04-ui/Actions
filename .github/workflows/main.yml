@@ -1,9 +1,9 @@
 name: hello world
 
 on:
-  # push:
-  #   branches: [main]
-  workflow_dispatch: 
+  push:
+    branches: [main]
+  # workflow_dispatch: 
 
   # repository_dispatch:
   #    types:
@@ -12,7 +12,13 @@ on:
 
 jobs:
   greet:
+   if: ${{ github.repository == 'hanokchinni04-ui/Actions' }}
    runs-on: ubuntu-latest
    steps:
       - name: Say Hello
         run:  echo "Hello World"
+  hello_mf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: mf_
+        run: echo  "hello mf"
