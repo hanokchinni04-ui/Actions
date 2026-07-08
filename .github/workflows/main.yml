@@ -1,13 +1,13 @@
 name: hello world
 
 on:
-  # push:
-  #   branches: [main]
+  push:
+    branches: [main]
   # workflow_dispatch: 
 
-  repository_dispatch:
-     types:
-       - run_tests
+  # repository_dispatch:
+  #    types:
+  #      - run_tests
 
 
 jobs:
