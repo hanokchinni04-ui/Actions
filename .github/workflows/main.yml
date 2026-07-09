@@ -20,5 +20,10 @@ jobs:
   hello_mf:
     runs-on: ubuntu-latest
     steps:
-      - name: mf_
-        run: echo  "hello mf"
+      - name: group_mf
+        run: |
+          echo '::group::New Group'
+          echo 'group 1'
+          echo 'group 2'
+          echo 'group 3'
+          echo '::endgroup::'
