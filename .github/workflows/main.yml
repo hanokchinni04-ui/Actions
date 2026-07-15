@@ -1,29 +1,16 @@
-name: hello world
+name: Run Tests
 
 on:
-  push:
-    branches: [main]
-  # workflow_dispatch: 
-
-  # repository_dispatch:
-  #    types:
-  #      - run_tests
+   push:
+   workflow_dispatch:
 
 
 jobs:
-  greet:
-   if: ${{ github.repository == 'hanokchinni004-ui/Actions' }}
-   runs-on: ubuntu-latest
-   steps:
-      - name: Say Hello
-        run:  echo "Hello World"
-  hello_mf:
-    runs-on: ubuntu-latest
-    steps:
-      - name: group_mf
-        run: |
-          echo '::group::New Group'
-          echo 'group 1'
-          echo 'group 2'
-          echo 'group 3'
-          echo '::endgroup::'
+   test_job:
+      runs-on: ubuntu-latest
+      steps:
+         -name: checkout code
+          uses: actions/checkout@v4
+
+         -name: run test script
+          run:  bash scripts/run-tests.sh
