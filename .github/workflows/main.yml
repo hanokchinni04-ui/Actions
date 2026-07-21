@@ -31,3 +31,5 @@ jobs:
 
          - name: run test script
            run:  bash scripts/run-tests.sh
+           env:
+             API_KEY: ${{ secrets.FAKE_API_KEY }}
