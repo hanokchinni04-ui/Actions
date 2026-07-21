@@ -40,7 +40,7 @@ jobs:
            run:  echo "printing enivorment:${{ matrix.environment }}"
 
          - name: print manual input
-           run: echo "Manual trigger environment: ${{ inputs.environment }}"
+           run: echo "Manual trigger environment:${{ inputs.environment }}"
 
          - name: run test script
            run:  bash scripts/run-tests.sh
