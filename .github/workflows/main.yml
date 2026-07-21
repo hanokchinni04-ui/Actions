@@ -37,3 +37,9 @@ jobs:
          - name: run test failed
            if: success()
            run: echo "Test Failed"
+
+         - name: upload the report
+           uses: actions/upload-artifact@v4
+           with:
+             name: test-report
+             path: test-report.txt
