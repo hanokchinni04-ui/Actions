@@ -27,7 +27,7 @@ jobs:
            uses: actions/checkout@v4
 
          - name: print environment
-           run:  echo "printing enivorment: ${{ matrix.environment }}"
+           run:  echo "printing enivorment:${{ matrix.environment }}"
 
          - name: run test script
            run:  bash scripts/run-tests.sh
