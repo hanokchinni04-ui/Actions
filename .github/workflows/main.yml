@@ -3,6 +3,16 @@ name: Run Tests
 on:
    push:
    workflow_dispatch:
+     inputs:
+       environment:
+         description: 'Which environment to test'
+         required: true
+         type: choice
+         options:
+          - dev
+          - staging
+          - prod
+         default: 'dev'
 
 
 jobs:
@@ -28,6 +38,9 @@ jobs:
 
          - name: print environment
            run:  echo "printing enivorment:${{ matrix.environment }}"
+
+         - name: print manual input
+           run: echo "Manual trigger environment: ${{ inputs.environment }}"
 
          - name: run test script
            run:  bash scripts/run-tests.sh
